@@ -1,12 +1,19 @@
 Package: transcats
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Translate Categorical Data Using Translation Tables
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Authors@R: 
+    person(
+    "Carwil", "Bjork-James",
+    email = "c.bjork-james@vanderbilt.edu",
+    role = c("aut", "cre"),
+    comment = c(ORCID = "0000-0002-4977-0458")
+  )
+Description: Translate the variable names and titles and values of dataframes 
+    containing containing categorical and other data. These translations are
+    made using editable translation tables to allow users to edit and verify
+    translations.
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 URL: https://github.com/CarwilB/transcats
