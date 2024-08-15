@@ -6,7 +6,7 @@
 #'
 #' @param variable Name of the variable, passed as a string, in quotes
 #' @param lang Language to be used; use `r_variable` for the variable itself.
-#' @param var_name_table A horizontal translation table whose column names correspond to variables
+#' @param name_table A horizontal translation table whose column names correspond to variables
 #'
 #' @returns A text string that is the title of the variable, or the name of the variable in r.
 #'
@@ -16,13 +16,13 @@
 #' map(colnames(gss_cat), var_lang_str)
 #'
 variable_name_from_string <- function(variable,
-                                      lang= tcats$title_lang,
+                                      lang = tcats$title_lang,
                                       name_table = tcats$var_name_table){
   stopifnot(lang %in% var_name_table$language)
 
   row_of_names_for_language <- name_table %>% filter(language == lang)
   if (any(names(row_of_names_for_language)==variable)){
-    pull(row_of_names_for_language[1, variable])
+    dplyr::pull(row_of_names_for_language[1, variable])
     # select(row_of_names_for_language, .cols={{variable}}) %>% pull()
   }else{
     warning(paste0("No translation found for ", variable, "."))
@@ -34,7 +34,7 @@ variable_name_from_string <- function(variable,
 #'
 #' @param variable Name of the variable, without quotes
 #' @param lang Language to be used; use `r_variable` for the variable itself.
-#' @param var_name_table A horizontal translation table whose column names correspond to variables
+#' @param name_table A horizontal translation table whose column names correspond to variables
 #'
 #' @returns A text string that is the title of the variable, or the name of the variable in r.
 #'
@@ -43,9 +43,9 @@ variable_name_from_string <- function(variable,
 #' variable_name_from_string(partyid, "en", gss_var_table)
 #'
 variable_name <- function(variable,
-                          lang= tcats$title_lang,
+                          lang = tcats$title_lang,
                           name_table = tcats$var_name_table){
-  variable <- as_label(enquo(variable))
+  variable <- rlang::as_label(rlang::enquo(variable))
   variable_name_from_string(variable, lang, name_table)
 }
 
@@ -91,13 +91,13 @@ var_lang_str <- function(...){
 #'
 #' @param dataframe Dataframe whose columns are the variables to be listed.
 #' @param lang Language to be used; use `r_variable` for the variable itself.
-#' @param var_name_table A horizontal translation table whose column names correspond to variables
+#' @param name_table A horizontal translation table whose column names correspond to variables
 #'
 #' @return A vector of strings wit tehe display names.
 #'
 #' @examples
 #' variable_names_vector(gss_cat)
-variable_names_vector <- function(dataframe, lang="en", name_table = var_name_table){
-  purrr::map(colnames(dataframe), lang, var_name_table) %>%
+variable_names_vector <- function(dataframe){
+  purrr::map(colnames(dataframe), var_lang_str) %>%
     purrr::list_simplify()
 }
