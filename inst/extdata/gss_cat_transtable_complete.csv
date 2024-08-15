@@ -1,0 +1,87 @@
+﻿en,es,fr
+marital,--,--
+Never married,Nunca se casó,Jamais marié.e
+Divorced,Divorciada/o,Divorcé.e
+Widowed,Viuda/o,Veuf/Veuve
+Married,Casada/o,Marié.e
+Separated,Separada/o,Séparé.e
+No answer,Sin respuesta,Pas de réponse
+race,--,--
+White,Blanca/o,Blanc.he
+Black,Negra/o,Noir.e
+Other,Otro,Autre
+rincome,--,--
+$8000 to 9999,$8000 a 9999,$8000 à 9999
+Not applicable,No aplicable,Non applicable
+$20000 - 24999,$20000 a 24999,$20000 à 24999
+$25000 or more,$25000 o más,$25000 ou plus
+$7000 to 7999,$7000 a 7999,$7000 à 7999
+$10000 - 14999,$10000 a 14999,$10000 à 14999
+Refused,Rechazado,Refusé
+$15000 - 19999,$15000 a 19999,$15000 à 19999
+$3000 to 3999,$3000 a 3999,$3000 à 3999
+$5000 to 5999,$5000 a 5999,$5000 à 5999
+Don't know,No sabe,Ne sait pas
+$1000 to 2999,$1000 a 2999,$1000 à 2999
+Lt $1000,Menos que $1000,Moins de $1000
+No answer,Sin respuesta,Pas de réponse
+$6000 to 6999,$6000 a 6999,$6000 à 6999
+$4000 to 4999,$4000 a 4999,$4000 à 4999
+partyid,--,--
+"Ind,near rep","Independiente, casi republicana/o","Indépendant.e, proche du républicain.e"
+Not str republican,"Republicana/o, no fuerte","Républicain.e, pas fort.e"
+Independent,Independiente,Indépendant.e
+Not str democrat,"Demócrata, no fuerte","Démocrate, pas fort.e"
+Strong democrat,Demócrata  fuerte,Démocrate fort.e
+"Ind,near dem","Independiente, casi demócrata","Indépendant.e, proche du démocrate"
+Strong republican,Republicana/o fuerte,Républicain.e fort.e
+Other party,Otro partido,Autre parti politique
+No answer,Sin respuesta,Pas de réponse
+Don't know,No sabe,Ne sait pas
+relig,--,--
+Protestant,Protestante,Protestant
+Orthodox-christian,Cristiano ortodoxo,Chrétien orthodoxe
+None,Ninguno,Aucun
+Christian,Cristiano,Chrétien
+Jewish,Judío,Juif
+Catholic,Católico,Catholique
+Other,Otro,Autre
+Inter-nondenominational,Interconfesional,Interconfessionnel
+Hinduism,Hindú,Hindou
+Native american,Indígena americano,Amérindien
+No answer,Sin respuesta,Pas de réponse
+Buddhism,Budista,Bouddhiste
+Moslem/islam,Musulmán,Musulman
+Other eastern,Otra religión oriental,Autre oriental
+Don't know,No sabe,Ne sait pas
+denom,--,--
+Southern baptist,Bautista del Sur,Baptiste du Sud
+Baptist-dk which,"Bautista, no sabe cuál","Baptiste, ne sait pas lequel"
+No denomination,Sin denominación,Aucune dénomination
+Not applicable,No corresponde,Sans objet
+Lutheran-mo synod,Sínodo luterano-misuri,Synode luthérien-Missouri
+Other,Otro,Autre
+United methodist,Metodista unido,Méthodiste uni
+Episcopal,Episcopal,Épiscopal
+Other lutheran,Otro luterano,Autre luthérien
+Afr meth ep zion,African Methodist Episcopal Zion,Méthodiste africain Épiscopal Sion
+Am bapt ch in usa,Iglesia bautista americana en EE. UU.,Église baptiste américaine aux États-Unis
+Other methodist,Otro metodista,Autre méthodiste
+Presbyterian c in us,Iglesia presbiteriana en Estados Unidos,Église presbytérienne aux États-Unis
+Methodist-dk which,"Metodista, no sabe cuál","Méthodiste, ne sait pas lequel"
+Nat bapt conv usa,"Convención bautista nacional, EE. UU.","Convention baptiste nationale, États-Unis"
+Am lutheran,Luterana americana,Luthérien américain
+Nat bapt conv of am,Nat Bapt Conv of America,Convention baptiste nationale d'Amérique
+Am baptist asso,Asociación bautista americana,Association baptiste américaine
+Evangelical luth,Luterana evangélica,Luthérien évangélique
+Afr meth episcopal,African Methodist Episcopal,Méthodiste africain Épiscopal
+Lutheran-dk which,"Luterana, no sabe cuál","Luthérien, ne sait pas lequel"
+Luth ch in america,Iglesia luterana en Estados Unidos,Église luthérienne d'Amérique
+"Presbyterian, merged","Presbiteriana, fusionada","Presbytérien, fusionné"
+No answer,Sin respuesta,Pas de réponse
+Wi evan luth synod,Sínodo luterano evangélico de Wisconsin,Synode évangélique luthérien du Wisconsin
+Other baptists,Otro bautista,Autre baptiste
+Other presbyterian,Otro presbiteriano,Autre presbytérien
+United pres ch in us,Iglesia presbiteriana unida en EE. UU.,Église presbytérienne unie aux États-Unis
+Presbyterian-dk wh,"Presbiteriana, no sabe cuál","Presbytérien, ne sait pas lequel"
+Don't know,No sabe,Ne sait pas
