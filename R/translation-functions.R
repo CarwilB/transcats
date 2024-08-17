@@ -1,3 +1,17 @@
+#' Change the active translation table
+#'
+#' Changes the value of tcats$translation_table.
+#'
+#' @param transtable A list of translation tables, named
+#'        by the variables involved.
+#'
+#' @returns Former value of the parameter.
+set_active_translation_table <- function(transtable) {
+  old <- tcats$translation_table
+  tcats$translation_table <- transtable
+  invisible(old)
+}
+
 #' Translated Join
 #'
 #' Adds one column (`translated_join`) or several columns (`translated_join_vars`)
@@ -25,12 +39,15 @@ translated_join <- function(dataframe, variable,
                             translation_table = tcats$translation_table,
                             dest_lang = tcats$dest_lang,
                             source_lang = tcats$source_lang){
-  renamed_variable <- str_c(variable, dest_lang, sep="_")
-  left_join(dataframe, pluck(translation_table, variable),
+  renamed_variable <- stringr::str_c(variable, dest_lang, sep="_")
+  var_trans_table <- purrr::pluck(translation_table, variable) %>%
+    dplyr::select(matches(source_lang), matches(dest_lang))
+  dplyr::left_join(dataframe, var_trans_table,
             by = setNames(source_lang, variable)) %>%
-    rename_with(~ paste0(variable, "_", .x, recycle0 = TRUE), .cols =any_of(c(dest_lang)))
+    dplyr::rename_with(~ paste0(variable, "_", .x, recycle0 = TRUE), .cols =any_of(c(dest_lang)))
 }
 
+#' @rdname translated_join
 translated_join_vars <- function(dataframe, variables=c(""), ...){
   for (i in 1:length(variables)){
     dataframe <- translated_join(dataframe, variables[i], ...)
