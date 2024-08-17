@@ -2,6 +2,7 @@
 % Please edit documentation in R/translation-functions.R
 \name{translated_join}
 \alias{translated_join}
+\alias{translated_join_vars}
 \title{Translated Join}
 \usage{
 translated_join(
@@ -11,6 +12,8 @@ translated_join(
   dest_lang = tcats$dest_lang,
   source_lang = tcats$source_lang
 )
+
+translated_join_vars(dataframe, variables = c(""), ...)
 }
 \arguments{
 \item{dataframe}{Data table being changed}

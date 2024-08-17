@@ -13,7 +13,7 @@
 #' @examples
 #' variable_name_from_string("relig", lang="es")
 #' variable_name_from_string("partyid", lang="en")
-#' map(colnames(gss_cat), var_lang_str)
+#' map(colnames(forcats::gss_cat), var_lang_str)
 #'
 variable_name_from_string <- function(variable,
                                       lang = tcats$title_lang,
@@ -96,7 +96,7 @@ var_lang_str <- function(...){
 #' @return A vector of strings wit tehe display names.
 #'
 #' @examples
-#' variable_names_vector(gss_cat)
+#' variable_names_vector(forcats::gss_cat)
 variable_names_vector <- function(dataframe){
   purrr::map(colnames(dataframe), var_lang_str) %>%
     purrr::list_simplify()
