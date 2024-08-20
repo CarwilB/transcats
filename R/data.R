@@ -26,3 +26,15 @@
 #'
 #' @source <https://ultimateconsequences.github.io/>
 "uc_translation"
+
+#' Ultimate Consequences Translation Table
+#'
+#' A translation table for the Ultimate Consequences data project,
+#' which documents deaths in Bolivian political conflict.
+#'
+#' @format A tibble with three rows and 63 columns. Each row corresponds
+#' to a single language, "en" (English), "es" (Spanish), and "r_variable"
+#' (the variable names in R).
+#'
+#' @source <https://ultimateconsequences.github.io/>
+"uc_var_table"
