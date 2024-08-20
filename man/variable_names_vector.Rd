@@ -8,18 +8,15 @@ variable_names_vector(dataframe)
 }
 \arguments{
 \item{dataframe}{Dataframe whose columns are the variables to be listed.}
-
-\item{lang}{Language to be used; use `r_variable` for the variable itself.}
-
-\item{name_table}{A horizontal translation table whose column names correspond to variables}
 }
 \value{
-A vector of strings wit tehe display names.
+A vector of strings wit the display names.
 }
 \description{
-Using the variable name table, produce a list of display names for each
-variable, in the language specified.
+Using the active variable name table, produce a list of display names for each
+variable, in the language currently specified as tcats$title_lang (set by
+`set_title_lang()`).
 }
 \examples{
-variable_names_vector(gss_cat)
+variable_names_vector(forcats::gss_cat)
 }
