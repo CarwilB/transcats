@@ -1,3 +1,22 @@
+tcats$var_name_table <- gss_var_table
+
+#' Change the active variable name table
+#'
+#' Changes the value of tcats$var_name_table, the currently active
+#' table for translating variable names.
+#'
+#' @param vartable A horizontal translation table whose column names
+#'                 correspond to variables
+#'
+#' @returns Former value of the parameter.
+#'
+#' @examples
+#' set_var_name_table(gss_var_table)
+set_var_name_table <- function(vartable) {
+  old <- tcats$var_name_table
+  tcats$var_name_table <- vartable
+  invisible(old)
+}
 #' Language-specific names for variables
 #'
 #' This function outputs a string naming a variable based on a multilingual
@@ -11,6 +30,7 @@
 #' @returns A text string that is the title of the variable, or the name of the variable in r.
 #'
 #' @examples
+#' set_var_name_table(gss_var_table)
 #' variable_name_from_string("relig", lang="es")
 #' variable_name_from_string("partyid", lang="en")
 #' map(colnames(forcats::gss_cat), var_lang_str)
@@ -18,7 +38,7 @@
 variable_name_from_string <- function(variable,
                                       lang = tcats$title_lang,
                                       name_table = tcats$var_name_table){
-  stopifnot(lang %in% var_name_table$language)
+  stopifnot(lang %in% name_table$language)
 
   row_of_names_for_language <- name_table %>% filter(language == lang)
   if (any(names(row_of_names_for_language)==variable)){
@@ -86,14 +106,13 @@ var_lang_str <- function(...){
 
 #' Produce a list of display names for each variables
 #'
-#' Using the variable name table, produce a list of display names for each
-#' variable, in the language specified.
+#' Using the active variable name table, produce a list of display names for each
+#' variable, in the language currently specified as tcats$title_lang (set by
+#' `set_title_lang()`).
 #'
 #' @param dataframe Dataframe whose columns are the variables to be listed.
-#' @param lang Language to be used; use `r_variable` for the variable itself.
-#' @param name_table A horizontal translation table whose column names correspond to variables
 #'
-#' @return A vector of strings wit tehe display names.
+#' @return A vector of strings wit the display names.
 #'
 #' @examples
 #' variable_names_vector(forcats::gss_cat)

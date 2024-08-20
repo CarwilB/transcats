@@ -34,7 +34,8 @@ create_blank_translation_table <-
     dest_language_list <- c(dest_language_list)
   }
 
-  datacolumn <- dplyr::select(dataframe, all_of(variable))
+#  datacolumn <- dplyr::select(dataframe, all_of(variable))
+   datacolumn <- dataframe[[variable]]
 
   stopifnot(!is.numeric(datacolumn))
   if (source_lang %in% dest_language_list){
@@ -47,12 +48,12 @@ create_blank_translation_table <-
   if (is.factor(datacolumn)) {
     translation_table <- as.data.frame(levels(datacolumn))
   } else {
-    translation_table <- unique(datacolumn)
+    translation_table <- as.data.frame(unique(datacolumn))
   }
   names(translation_table) <- source_lang
 
   translation_table[,dest_language_list] <- ""
-  lang_list <- names(translation_table)
+  lang_list <- c(source_lang, dest_language_list)
   dupl_langs <- lang_list[anyDuplicated(lang_list)]
   if (length(dupl_langs)>0){
     warning(paste("Duplicated languages in table:", dupl_langs))
@@ -127,7 +128,7 @@ create_blank_translation_tables <-
     }
 
     if (combine_tables) {
-      blank_trans_tables_combined <- purrr::list_rbind(blank_trans_tables_h)
+      blank_trans_tables_combined <- purrr::list_rbind(blank_trans_tables)
       return(blank_trans_tables_combined)
     } else {
       return(blank_trans_tables)

@@ -4,8 +4,6 @@ tcats$title_lang <- "en"
 tcats$dest_lang <- "es"
 tcats$dest_lang_list <- c(tcats$dest_lang) # default list has just one element
 
-tcats$var_name_table <- gss_var_table
-
 #' Report the active source language for translation
 source_lang <- function() {
   tcats$source_lang
