@@ -6,10 +6,10 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of transcats is to translate the variable names and titles and
-values of dataframes containing containing categorical and other data.
-These translations are made using editable translation tables to allow
-users to edit and verify translations.
+The goal of transcats is to **trans**late the variable names and titles
+and values of dataframes containing containing **cat**egorical and other
+data. These translations are made using editable translation tables to
+allow users to edit and verify translations.
 
 ## Installation
 
