@@ -29,6 +29,9 @@ the variable involved).}
 \item{source_lang}{Language to be translated from, typically as a short code.}
 
 \item{variables}{A list of variables in c("firstvar", "secondvar") format.}
+
+\item{...}{is used to pass translation_table, dest_lang, source_lang
+on from translated_join_vars to translated_join}
 }
 \value{
 A modified version of the data table with extra columns

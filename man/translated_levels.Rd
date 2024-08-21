@@ -24,8 +24,6 @@ the variable involved).}
 \item{dest_lang}{Language to be translated to, typically as a short code.}
 
 \item{source_lang}{Language to be translated from, typically as a short code.}
-
-\item{variables}{A list of variables in c("firstvar", "secondvar") format.}
 }
 \value{
 A one-dimensional levels vector for the factor.

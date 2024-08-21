@@ -7,8 +7,8 @@
 set_dest_lang_list(langlist = c(tcats$dest_lang))
 }
 \arguments{
-\item{langcode}{Code for the language you are choosing, typically
-a two- or three-letter string.}
+\item{langlist}{Code for the list of languages you are choosing,
+typically each a two- or three-letter string.}
 }
 \value{
 Former value of the parameter.
