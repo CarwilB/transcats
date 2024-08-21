@@ -62,3 +62,14 @@ test_that("Duplicated translation warned",{
   expect_warning(create_blank_translation_table(forcats::gss_cat, "race",
                                                 source_lang = "en", dest_language_list = c("es", "fr", "cz", "es")))
 })
+
+test_that("Works with custom language list",{
+  expect_no_condition(create_blank_translation_tables(vcd::DanishWelfare, c("Status", "Urban"),
+                                  source_lang = "en",
+                                  dest_language_list = c("en-complete", "dk")))
+  dwtt <- create_blank_translation_tables(vcd::DanishWelfare, c("Status", "Urban"),
+                                  source_lang = "en",
+                                  dest_language_list = c("en-complete", "dk"))
+  expect_equal(dwtt[1, 2], "--")
+  expect_equal(names(dwtt), c("en", "en-complete", "dk"))
+})

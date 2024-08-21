@@ -94,6 +94,9 @@ create_blank_translation_table <-
 #' @examples
 #' create_blank_translation_tables(forcats::gss_cat, c("marital", "race", "relig"),
 #'     "en", c("fr", "cz"))
+#' create_blank_translation_tables(vcd::DanishWelfare, c("Status", "Urban"),
+#'                                 source_lang = "en",
+#'                                 dest_language_list = c("en-complete", "dk"))
 create_blank_translation_tables <-
   function(dataframe,
            variable_list,
@@ -102,17 +105,19 @@ create_blank_translation_tables <-
            incl_header = TRUE,
            combine_tables = TRUE){
 
-    if (is.character(variable_list)){
+    if (assertthat::is.string(variable_list)){
       variable_list <- c(variable_list)
     }
 
-    if (is.character(dest_language_list)){
+    if (assertthat::is.string(dest_language_list)){
       dest_language_list <- c(dest_language_list)
     }
 
     blank_trans_tables <-
       purrr::map(variable_list,
-                 ~ create_blank_translation_table(dataframe, .x)) %>%
+                 ~ create_blank_translation_table(dataframe, .x,
+                                                  source_lang = source_lang,
+                                                  dest_language_list = dest_language_list)) %>%
       purrr::set_names(variable_list)
 
     if (incl_header){
