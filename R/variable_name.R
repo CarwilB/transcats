@@ -1,22 +1,3 @@
-tcats$var_name_table <- gss_var_table
-
-#' Change the active variable name table
-#'
-#' Changes the value of tcats$var_name_table, the currently active
-#' table for translating variable names.
-#'
-#' @param vartable A horizontal translation table whose column names
-#'                 correspond to variables
-#'
-#' @returns Former value of the parameter.
-#'
-#' @examples
-#' set_var_name_table(gss_var_table)
-set_var_name_table <- function(vartable) {
-  old <- tcats$var_name_table
-  tcats$var_name_table <- vartable
-  invisible(old)
-}
 #' Language-specific names for variables
 #'
 #' This function outputs a string naming a variable based on a multilingual
@@ -40,7 +21,7 @@ variable_name_from_string <- function(variable,
                                       name_table = tcats$var_name_table){
   stopifnot(lang %in% name_table$language)
 
-  row_of_names_for_language <- name_table %>% filter(language == lang)
+  row_of_names_for_language <- name_table %>% dplyr::filter(language == lang)
   if (any(names(row_of_names_for_language)==variable)){
     dplyr::pull(row_of_names_for_language[1, variable])
     # select(row_of_names_for_language, .cols={{variable}}) %>% pull()
