@@ -8,6 +8,7 @@
 #' @importFrom dplyr select
 #' @importFrom dplyr slice
 #' @importFrom fs path_package
+#' @importFrom lifecycle deprecated
 #' @importFrom rlang as_label
 #' @importFrom rlang enquo
 #' @importFrom stats setNames

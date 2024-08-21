@@ -1,7 +1,7 @@
 Package: transcats
 Type: Package
 Title: Translate Categorical Data Using Translation Tables
-Version: 0.1.0
+Version: 0.0.0.9000
 Authors@R: 
     person(
     "Carwil", "Bjork-James",
@@ -23,6 +23,7 @@ Imports:
     assertthat,
     dplyr,
     fs,
+    lifecycle,
     magrittr,
     purrr,
     rlang,
@@ -42,3 +43,4 @@ Suggests:
     vcd
 Config/testthat/edition: 3
 VignetteBuilder: knitr
+Roxygen: list(markdown = TRUE)
