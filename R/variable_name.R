@@ -103,6 +103,8 @@ var_lang_str <- function(...){
 #' @return A vector of strings wit the display names.
 #'
 #' @examples
+#' set_title_lang("es")
+#' set_var_name_table(gss_var_table)
 #' variable_names_vector(forcats::gss_cat)
 #'
 #' @export
