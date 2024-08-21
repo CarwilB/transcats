@@ -30,6 +30,8 @@ set_active_translation_table <- function(transtable) {
 #'   the variable involved).
 #' @param dest_lang Language to be translated to, typically as a short code.
 #' @param source_lang Language to be translated from, typically as a short code.
+#' @param ... is used to pass translation_table, dest_lang, source_lang
+#'  on from translated_join_vars to translated_join
 #'
 #' @returns A modified version of the data table with extra columns
 #'
@@ -41,10 +43,11 @@ translated_join <- function(dataframe, variable,
                             source_lang = tcats$source_lang){
   renamed_variable <- stringr::str_c(variable, dest_lang, sep="_")
   var_trans_table <- purrr::pluck(translation_table, variable) %>%
-    dplyr::select(matches(source_lang), matches(dest_lang))
+    dplyr::select(tidyselect::matches(source_lang), tidyselect::matches(dest_lang))
   dplyr::left_join(dataframe, var_trans_table,
             by = setNames(source_lang, variable)) %>%
-    dplyr::rename_with(~ paste0(variable, "_", .x, recycle0 = TRUE), .cols =any_of(c(dest_lang)))
+    dplyr::rename_with(~ paste0(variable, "_", .x, recycle0 = TRUE),
+                       .cols =any_of(c(dest_lang)))
 }
 
 #' @rdname translated_join

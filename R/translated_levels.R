@@ -4,7 +4,6 @@
 #'
 #' @param levels_vector One-dimensional vector of levels of a factor
 #' @param variable The variable involved, passed as a string.
-#' @param variables A list of variables in c("firstvar", "secondvar") format.
 #' @param translation_table Consolidated translation table to be used
 #'   (translation_table$variable should be a translation table for
 #'   the variable involved).
@@ -18,10 +17,10 @@
 translated_levels <- function(levels_vector, variable, translation_table,
                               dest_lang="es", source_lang="en") {
 
-  levels_tibble <- as_tibble(levels_vector)
+  levels_tibble <- tibble::as_tibble(levels_vector)
   colnames(levels_tibble) <- c(variable)
   levels_tibble <- levels_tibble %>%
-    translated_join(translation, variable, dest_lang, source_lang)
-  levels_vector_final <- pluck(levels_tibble, paste0(variable, "_", dest_lang))
+    translated_join(translation_table, variable, dest_lang, source_lang)
+  levels_vector_final <- purrr::pluck(levels_tibble, paste0(variable, "_", dest_lang))
   return(levels_vector_final)
 }

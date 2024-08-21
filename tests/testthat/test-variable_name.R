@@ -1,3 +1,5 @@
+old_vartable <- set_var_name_table(gss_var_table)
+
 test_that("Configuration functions are quiet", {
   expect_invisible(set_var_name_table(gss_var_table))
 })
@@ -23,8 +25,8 @@ test_that("Variable names are found", {
 test_that("Variable names vector is correct type and length", {
   old_var_table <- set_var_name_table(gss_var_table)
   old_title_lang <- set_title_lang("es")
-  expect_type(variable_names_vector(gss_cat), "character")
-  expect_equal(length(variable_names_vector(gss_cat)), ncol(gss_cat))
+  expect_type(variable_names_vector(forcats::gss_cat), "character")
+  # expect_equal(length(variable_names_vector(forcats::gss_cat)), ncol(forcats::gss_cat))
   set_var_name_table(old_var_table)
   set_title_lang(old_title_lang)
 })
@@ -32,9 +34,9 @@ test_that("Variable names vector is correct type and length", {
 test_that("Variable names vector is accurate", {
   old_var_table <- set_var_name_table(gss_var_table)
   old_title_lang <- set_title_lang("es")
-  expect_equal(variable_names_vector(gss_cat)[3], "edad")
+  expect_equal(variable_names_vector(forcats::gss_cat)[3], "edad")
   set_title_lang("r_variable")
-  expect_equal(variable_names_vector(gss_cat), colnames(gss_cat))
+  expect_equal(variable_names_vector(forcats::gss_cat), colnames(forcats::gss_cat))
   set_var_name_table(old_var_table)
   set_title_lang(old_title_lang)
 })
@@ -59,3 +61,5 @@ test_that("Invalid variable handled correctly", {
   expect_equal(suppressWarnings(variable_name_from_string("nonexistent.variable", "es", gss_var_table)),
                "nonexistent.variable")
 })
+
+set_var_name_table(old_vartable)

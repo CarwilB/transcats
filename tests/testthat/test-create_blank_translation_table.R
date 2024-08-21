@@ -2,19 +2,19 @@ test_that("Translation table includes all levels", {
   gss_race <- create_blank_translation_table(forcats::gss_cat, "race")
   expect_equal(nrow(gss_race), 4)
   expect_equal(gss_race[1,1], "Other")
-  expect_equal(gss_race[,1], levels(gss_cat$race))
+  expect_equal(gss_race[,1], levels(forcats::gss_cat$race))
 })
 
 test_that("create_blank_translation_tables handles errors", {
-  expect_error(create_blank_translation_table(gss_cat, "nonexistent.variable"))
-  expect_warning(create_blank_translation_table(gss_cat, "race",
+  expect_error(create_blank_translation_table(forcats::gss_cat, "nonexistent.variable"))
+  expect_warning(create_blank_translation_table(forcats::gss_cat, "race",
                                                 "es", c("en","es","fr")))
 })
 
 test_that("Translation table is consistent", {
-  gss_cat %>% dplyr::select(where(~ is.factor(.x) || is.character(.x))) %>%
+  forcats::gss_cat %>% dplyr::select(where(~ is.factor(.x) || is.character(.x))) %>%
     names() -> gss_cat_trans_variables
-  gss_btt <- create_blank_translation_tables(gss_cat, gss_cat_trans_variables,
+  gss_btt <- create_blank_translation_tables(forcats::gss_cat, gss_cat_trans_variables,
                                              incl_header=FALSE , combine_tables=FALSE)
   expect_snapshot(gss_btt)
   expect_equal(length(gss_btt), length(gss_cat_trans_variables))
@@ -22,9 +22,9 @@ test_that("Translation table is consistent", {
 })
 
 test_that("Combined translation table is consistent", {
-  gss_cat %>% dplyr::select(where(~ is.factor(.x) || is.character(.x))) %>%
+  forcats::gss_cat %>% dplyr::select(where(~ is.factor(.x) || is.character(.x))) %>%
     names() -> gss_cat_trans_variables
-  gss_btt_combined <- create_blank_translation_tables(gss_cat, gss_cat_trans_variables,
+  gss_btt_combined <- create_blank_translation_tables(forcats::gss_cat, gss_cat_trans_variables,
                                              source_lang = "en",
                                              dest_language_list = c("es"),
                                              incl_header=TRUE, combine_tables=TRUE)
@@ -35,12 +35,12 @@ test_that("Combined translation table is consistent", {
 })
 
 test_that("Header row generated", {
-  gss_cat %>% dplyr::select(where(~ is.factor(.x) || is.character(.x))) %>%
+  forcats::gss_cat %>% dplyr::select(where(~ is.factor(.x) || is.character(.x))) %>%
     names() -> gss_cat_trans_variables
-  gss_btt <- create_blank_translation_tables(gss_cat, gss_cat_trans_variables,
+  gss_btt <- create_blank_translation_tables(forcats::gss_cat, gss_cat_trans_variables,
                                              incl_header=TRUE , combine_tables=FALSE)
   gss_btt_race <- as.data.frame(gss_btt["race"])
-  expect_equal(nrow(gss_btt_race), length(levels(gss_cat$race))+1)
+  expect_equal(nrow(gss_btt_race), length(levels(forcats::gss_cat$race))+1)
   expect_equal(gss_btt_race[1,1], "race")
   expect_equal(gss_btt_race[1,2], "--")
   rm(gss_btt_race)
@@ -64,6 +64,7 @@ test_that("Duplicated translation warned",{
 })
 
 test_that("Works with custom language list",{
+  skip_if_not_installed("vcd")
   expect_no_condition(create_blank_translation_tables(vcd::DanishWelfare, c("Status", "Urban"),
                                   source_lang = "en",
                                   dest_language_list = c("en-complete", "dk")))

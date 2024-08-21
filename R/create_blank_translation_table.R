@@ -127,7 +127,7 @@ create_blank_translation_tables <-
 
       blank_trans_tables <-
         purrr::map(1:length(variable_list),
-                   ~ add_row(purrr::pluck(blank_trans_tables, variable_list[.x]),
+                   ~ tibble::add_row(purrr::pluck(blank_trans_tables, variable_list[.x]),
                              header_block[.x,], .before = 1)) %>%
         purrr::set_names(variable_list)
     }

@@ -21,9 +21,11 @@
 #' @export
 #'
 #' @examples
-#' gss_translation_combined <- readr::read_csv("inst/extdata/gss_cat_transtable_complete.csv")
-#' gss_translation <- parse_combined_tronslation_table(gss_translation_combined)
-parse_combined_tronslation_table <- function(combined_table){
+#' gss_translation_combined <- readr::read_csv(
+#'                        fs::path_package("extdata", "gss_cat_transtable_complete.csv",
+#'                                         package = "transcats"))
+#' gss_translation <- parse_combined_translation_table(gss_translation_combined)
+parse_combined_translation_table <- function(combined_table){
 
   header_row_numbers <- which(combined_table[,2]=="--")
   table_names <- combined_table[header_row_numbers,1] %>% pull(1)
@@ -32,7 +34,8 @@ parse_combined_tronslation_table <- function(combined_table){
 
   translation_list <-
     purrr::map(1:n_tables,
-               ~ slice(combined_table, (header_row_numbers[.x]+1):(header_row_numbers[.x+1]-1))) %>%
+               ~ dplyr::slice(combined_table,
+                              (header_row_numbers[.x]+1):(header_row_numbers[.x+1]-1))) %>%
     purrr::set_names(table_names[1:n_tables])
 
   translation_list

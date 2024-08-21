@@ -52,4 +52,7 @@ receive a warning.
 \examples{
 create_blank_translation_tables(forcats::gss_cat, c("marital", "race", "relig"),
     "en", c("fr", "cz"))
+create_blank_translation_tables(vcd::DanishWelfare, c("Status", "Urban"),
+                                source_lang = "en",
+                                dest_language_list = c("en-complete", "dk"))
 }
