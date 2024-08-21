@@ -14,14 +14,16 @@
 #' set_var_name_table(gss_var_table)
 #' variable_name_from_string("relig", lang="es")
 #' variable_name_from_string("partyid", lang="en")
-#' map(colnames(forcats::gss_cat), var_lang_str)
+#' purrr::map(colnames(forcats::gss_cat), var_lang_str)
 #'
+#'
+#' @export
 variable_name_from_string <- function(variable,
                                       lang = tcats$title_lang,
                                       name_table = tcats$var_name_table){
   stopifnot(lang %in% name_table$language)
 
-  row_of_names_for_language <- name_table %>% dplyr::filter(language == lang)
+  row_of_names_for_language <- name_table[which(name_table$language == lang), ]
   if (any(names(row_of_names_for_language)==variable)){
     dplyr::pull(row_of_names_for_language[1, variable])
     # select(row_of_names_for_language, .cols={{variable}}) %>% pull()
@@ -40,9 +42,10 @@ variable_name_from_string <- function(variable,
 #' @returns A text string that is the title of the variable, or the name of the variable in r.
 #'
 #' @examples
-#' variable_name_from_string(relig, "es", gss_var_table)
-#' variable_name_from_string(partyid, "en", gss_var_table)
+#' variable_name(relig, "es", gss_var_table)
+#' variable_name(partyid, "en", gss_var_table)
 #'
+#' @export
 variable_name <- function(variable,
                           lang = tcats$title_lang,
                           name_table = tcats$var_name_table){
@@ -63,6 +66,8 @@ lang_chosen <- "es" # using Spanish as the default target language
 #'
 #' @examples
 #' var_lang(tvhours)
+#'
+#' @export
 var_lang <- function(...){
   variable_name(..., lang = tcats$title_lang,
                      name_table = tcats$var_name_table)
@@ -80,6 +85,8 @@ var_lang <- function(...){
 #' @examples
 #' var_lang_str("tvhours")
 #'
+#'
+#' @export
 var_lang_str <- function(...){
   variable_name_from_string(..., lang = tcats$title_lang,
                                  name_table = tcats$var_name_table)
@@ -97,6 +104,8 @@ var_lang_str <- function(...){
 #'
 #' @examples
 #' variable_names_vector(forcats::gss_cat)
+#'
+#' @export
 variable_names_vector <- function(dataframe){
   purrr::map(colnames(dataframe), var_lang_str) %>%
     purrr::list_simplify()

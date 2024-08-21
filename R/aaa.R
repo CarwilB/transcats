@@ -7,20 +7,29 @@ tcats$dest_lang_list <- c(tcats$dest_lang) # default list has just one element
 # tcats$var_name_table <- gss_var_table
 
 #' Report the active source language for translation
+#'
+#' @export
 source_lang <- function() {
   tcats$source_lang
 }
 
 #' Report the active language for names of variables
+#'
+#' @export
 title_lang <- function() {
   tcats$title_lang
 }
 
 #' Report the active destination language for translation
+#'
+#' @export
 dest_lang <- function() {
   tcats$dest_lang
 }
 
+#' Report the active destination language list for translation
+#'
+#' @export
 dest_lang_list <- function() {
   tcats$dest_lang_list
 }
@@ -39,8 +48,7 @@ tcats$var_name_table <- data.frame(year = c("year of survey", "a\U00F1o de la en
 #'
 #' @returns Former value of the parameter.
 #'
-#' @examples
-#' set_var_name_table(gss_var_table)
+#' @export
 set_var_name_table <- function(vartable) {
   old <- tcats$var_name_table
   tcats$var_name_table <- vartable
@@ -55,6 +63,8 @@ set_var_name_table <- function(vartable) {
 #'                 a two- or three-letter string.
 #'
 #' @returns Former value of the parameter.
+#'
+#' @export
 set_source_lang <- function(langcode = "en") {
   old <- tcats$source_lang
   tcats$source_lang <- langcode
@@ -69,6 +79,9 @@ set_source_lang <- function(langcode = "en") {
 #'                 a two- or three-letter string.
 #'
 #' @returns Former value of the parameter.
+#' Report the active destination language for translation
+#'
+#' @export
 set_title_lang <- function(langcode = "en") {
   old <- tcats$title_lang
   tcats$title_lang <- langcode
@@ -83,6 +96,8 @@ set_title_lang <- function(langcode = "en") {
 #'                 a two- or three-letter string.
 #'
 #' @returns Former value of the parameter.
+#'
+#' @export
 set_dest_lang <- function(langcode = "es") {
   old <- tcats$dest_lang
   tcats$dest_lang <- langcode
@@ -97,6 +112,8 @@ set_dest_lang <- function(langcode = "es") {
 #'                 typically each a two- or three-letter string.
 #'
 #' @returns Former value of the parameter.
+#'
+#' @export
 set_dest_lang_list <- function(langlist = c(tcats$dest_lang)) {
   old <- tcats$dest_lang_list
   tcats$dest_lang_list <- langlist

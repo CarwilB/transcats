@@ -11,7 +11,7 @@
 #' `cause_death`, `state_responsibility`, `intentionality`, `event_title`
 #'
 #' @details
-#' translation <- `list(protest_domain = domain_trans_table,
+#' uc_translation <- `list(protest_domain = domain_trans_table,
 #'                     pres_admin = pres_trans_table,
 #'                     dec_affiliation = affil_trans_table,
 #'                     perp_affiliation = affil_trans_table,
@@ -53,3 +53,18 @@
 #'
 #' @source Created as part of `transcats`
 "gss_var_table"
+
+#' State Responsibility Levels
+#'
+#' A vector ordering the levels for the variable `state_responsibility` in
+#' the Ultimate Consequences database.
+#'
+#' @format
+#' `sr_levels` is a vector with six values.
+#'
+#' @details
+#' sr_levels <- c("Perpetrator", "Victim", "Involved", "Separate",
+#'                "Unintentional", "Unknown")
+#'
+#' @source <https://ultimateconsequences.github.io/>
+"sr_levels"

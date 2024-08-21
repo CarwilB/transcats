@@ -6,6 +6,8 @@
 #'        by the variables involved.
 #'
 #' @returns Former value of the parameter.
+#'
+#' @export
 set_active_translation_table <- function(transtable) {
   old <- tcats$translation_table
   tcats$translation_table <- transtable
@@ -35,8 +37,7 @@ set_active_translation_table <- function(transtable) {
 #'
 #' @returns A modified version of the data table with extra columns
 #'
-#' @examples
-#' sr_levels_es <- sr_levels %>% translated_levels("state_responsibility")
+#' @export
 translated_join <- function(dataframe, variable,
                             translation_table = tcats$translation_table,
                             dest_lang = tcats$dest_lang,
@@ -51,6 +52,8 @@ translated_join <- function(dataframe, variable,
 }
 
 #' @rdname translated_join
+#'
+#' @export
 translated_join_vars <- function(dataframe, variables=c(""), ...){
   for (i in 1:length(variables)){
     dataframe <- translated_join(dataframe, variables[i], ...)

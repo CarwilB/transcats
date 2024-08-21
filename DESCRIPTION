@@ -25,7 +25,6 @@ Imports:
     fs,
     magrittr,
     purrr,
-    readr,
     rlang,
     stats,
     stringr,
@@ -36,6 +35,7 @@ Depends:
 Suggests: 
     forcats,
     knitr,
+    readr,
     rmarkdown,
     testthat (>= 3.0.0),
     vcd
