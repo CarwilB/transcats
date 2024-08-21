@@ -16,7 +16,7 @@ Description: Translate the variable names and titles and values of dataframes
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-URL: https://github.com/CarwilB/transcats
+URL: https://github.com/CarwilB/transcats, https://carwilb.github.io/transcats/
 BugReports: https://github.com/CarwilB/transcats/issues
 RoxygenNote: 7.3.2
 Imports: 
