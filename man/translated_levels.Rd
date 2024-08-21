@@ -32,5 +32,8 @@ A one-dimensional levels vector for the factor.
 Translate the levels vector for a categorical factor.
 }
 \examples{
-sr_levels_es <- sr_levels \%>\% translated_levels("state_responsibility")
+sr_levels_es <- translated_levels(sr_levels, "state_responsibility",
+                                uc_translation,
+                                dest_lang="es", source_lang="en")
+
 }

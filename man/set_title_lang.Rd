@@ -12,6 +12,7 @@ a two- or three-letter string.}
 }
 \value{
 Former value of the parameter.
+Report the active destination language for translation
 }
 \description{
 Changes the value of tcats$title_lang.

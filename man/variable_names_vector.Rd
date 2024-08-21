@@ -19,4 +19,5 @@ variable, in the language currently specified as tcats$title_lang (set by
 }
 \examples{
 variable_names_vector(forcats::gss_cat)
+
 }

@@ -29,6 +29,7 @@ once, you can use this function with map() (and you cannot use variable_name()).
 set_var_name_table(gss_var_table)
 variable_name_from_string("relig", lang="es")
 variable_name_from_string("partyid", lang="en")
-map(colnames(forcats::gss_cat), var_lang_str)
+purrr::map(colnames(forcats::gss_cat), var_lang_str)
+
 
 }

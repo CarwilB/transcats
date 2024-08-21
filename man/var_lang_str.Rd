@@ -19,4 +19,5 @@ preset values for the language and variable name table.
 \examples{
 var_lang_str("tvhours")
 
+
 }

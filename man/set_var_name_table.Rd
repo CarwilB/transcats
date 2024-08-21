@@ -17,6 +17,3 @@ Former value of the parameter.
 Changes the value of tcats$var_name_table, the currently active
 table for translating variable names.
 }
-\examples{
-set_var_name_table(gss_var_table)
-}

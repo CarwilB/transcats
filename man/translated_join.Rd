@@ -45,6 +45,3 @@ categorical variables.
 Translated variables take the name of the original variable, plus an underscore,
 and the code of the destination language.
 }
-\examples{
-sr_levels_es <- sr_levels \%>\% translated_levels("state_responsibility")
-}

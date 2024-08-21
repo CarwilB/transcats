@@ -24,7 +24,7 @@ A text string that is the title of the variable, or the name of the variable in 
 Language-specific names for variables
 }
 \examples{
-variable_name_from_string(relig, "es", gss_var_table)
-variable_name_from_string(partyid, "en", gss_var_table)
+variable_name(relig, "es", gss_var_table)
+variable_name(partyid, "en", gss_var_table)
 
 }
