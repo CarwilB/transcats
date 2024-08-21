@@ -77,9 +77,13 @@ gss_translation
 
 Now we can write the combined table into an external file, available for editing via an external text editor or spreadsheet program.
 ```{r save-to-file}
+do_not_run <- TRUE
+
+if(!do_not_run){
 readr::write_excel_csv(
   gss_translation_combined,
   "inst/extdata/gss_cat_transtable.csv")
+}
 ```
 
 Editing by hand, or using machine translation and then editing the results, we fill in the table.
@@ -89,8 +93,11 @@ Editing by hand, or using machine translation and then editing the results, we f
 The completed .csv can be imported back into R. Use `parse_combined_translation_table` to turn the combined list into a `transcats` list of translation tables.
 
 ```{r reload-translation-table}
+library(fs)
+
 gss_translation_combined <- 
-  readr::read_csv("inst/extdata/gss_cat_transtable_complete.csv")
+  readr::read_csv(fs::path_package("extdata", "gss_cat_transtable_complete.csv",
+                                         package = "transcats"))
 gss_translation <- parse_combined_translation_table(gss_translation_combined)
 gss_translation
 ```
