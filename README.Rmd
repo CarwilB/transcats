@@ -1,0 +1,60 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# transcats
+
+<!-- badges: start -->
+`r lifecycle::badge('experimental')`
+<!-- badges: end -->
+
+The goal of transcats is to translate the variable names and titles and values of dataframes 
+containing containing categorical and other data. These translations are
+made using editable translation tables to allow users to edit and verify
+translations.
+
+## Installation
+
+You can install the development version of transcats from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("CarwilB/transcats")
+```
+
+## Example
+
+This is a basic example which shows you how to solve a common problem:
+
+```{r example}
+library(transcats)
+## basic example code
+names(forcats::gss_cat)
+set_title_lang("es")
+set_var_name_table(gss_var_table)
+variable_names_vector(forcats::gss_cat)
+```
+
+## Translating tabular data
+
+There's a longer workflow for translating categorical data (see the vignette "A workflow for creating translation tables"), but the net result is full translation of categorical data.
+
+```{r gss-before-and-after, echo = FALSE}
+knitr::kable(head(forcats::gss_cat, 8))
+
+gss_cat_fr <- readRDS("inst/extdata/gss_cat_fr.RDS")
+knitr::kable(head(gss_cat_fr, 8))
+```
+
+
