@@ -50,25 +50,18 @@ which documents deaths in Bolivian political conflict.</p>
 
     <div class="section level2">
     <h2 id="format">Format<a class="anchor" aria-label="anchor" href="#format"></a></h2>
-    <p>`uc_translation` is a list of eight tibbles, each with two columns named "en" and "es".
+    <p><code>uc_translation</code> is a list of eight tibbles, each with two columns named "en" and "es".
 Their names correspond to the categorical variables involved:
-`protest_domain`, `pres_admin`, `dec_affiliation`, `perp_affiliation`,
-`cause_death`, `state_responsibility`, `intentionality`, `event_title`</p>
+<code>protest_domain</code>, <code>pres_admin</code>, <code>dec_affiliation</code>, <code>perp_affiliation</code>,
+<code>cause_death</code>, <code>state_responsibility</code>, <code>intentionality</code>, <code>event_title</code></p>
     </div>
     <div class="section level2">
     <h2 id="source">Source<a class="anchor" aria-label="anchor" href="#source"></a></h2>
-    <p>&lt;https://ultimateconsequences.github.io/&gt;</p>
+    <p><a href="https://ultimateconsequences.github.io/" class="external-link">https://ultimateconsequences.github.io/</a></p>
     </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
-    <p>translation &lt;- `list(protest_domain = domain_trans_table,
-                    pres_admin = pres_trans_table,
-                    dec_affiliation = affil_trans_table,
-                    perp_affiliation = affil_trans_table,
-                    cause_death = cause_trans_table,
-                    state_responsibility = sresp_trans_table,
-                    intentionality = intent_trans_table,
-                    event_title = event_trans_table)`</p>
+    <p>uc_translation &lt;- <code>list(protest_domain = domain_trans_table, pres_admin = pres_trans_table, dec_affiliation = affil_trans_table, perp_affiliation = affil_trans_table, cause_death = cause_trans_table, state_responsibility = sresp_trans_table, intentionality = intent_trans_table, event_title = event_trans_table)</code></p>
 <p>Note that the duplicate between two variables is intentional,
 since these two variables (for the affiliation of the perpetrator
 and victim of political violence) use the same set of possible categories.</p>
