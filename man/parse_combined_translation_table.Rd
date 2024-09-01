@@ -14,20 +14,20 @@ sectioned off for each variable. Each header line takes the form
 to cover all but the first column.}
 }
 \value{
-A translation table list, `translation_list`,
-  each member of which is a translation table for a
-  given categorical variable.
+A translation table list, \code{translation_list},
+each member of which is a translation table for a
+given categorical variable.
 }
 \description{
 Part of the import sequence for a combined translation table,
-which can be produced by `create_blank_translation_table` and
+which can be produced by \code{create_blank_translation_table} and
 edited externally (for example, as a CSV file). This function
 takes a single data frame and splits it into as many smaller
 translation tables as are indicated by the number. of headers.
 }
 \details{
 It returns the translation table list used as the main
-translation table format by `transcats`.
+translation table format by \code{transcats}.
 }
 \examples{
 gss_translation_combined <- readr::read_csv(

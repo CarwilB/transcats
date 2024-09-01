@@ -3,6 +3,7 @@
 
 ## usethis namespace: start
 #' @importFrom assertthat is.string
+#' @importFrom dplyr all_of
 #' @importFrom dplyr filter
 #' @importFrom dplyr pull
 #' @importFrom dplyr select

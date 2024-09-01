@@ -15,9 +15,11 @@ A vector of strings wit the display names.
 \description{
 Using the active variable name table, produce a list of display names for each
 variable, in the language currently specified as tcats$title_lang (set by
-`set_title_lang()`).
+\code{set_title_lang()}).
 }
 \examples{
+set_title_lang("es")
+set_var_name_table(gss_var_table)
 variable_names_vector(forcats::gss_cat)
 
 }

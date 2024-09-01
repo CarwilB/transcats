@@ -36,6 +36,7 @@ Depends:
 Suggests: 
     forcats,
     knitr,
+    reactable,
     readr,
     rmarkdown,
     testthat (>= 3.0.0),

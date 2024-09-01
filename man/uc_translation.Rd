@@ -5,13 +5,13 @@
 \alias{uc_translation}
 \title{Ultimate Consequences Translation Table}
 \format{
-`uc_translation` is a list of eight tibbles, each with two columns named "en" and "es".
+\code{uc_translation} is a list of eight tibbles, each with two columns named "en" and "es".
 Their names correspond to the categorical variables involved:
-`protest_domain`, `pres_admin`, `dec_affiliation`, `perp_affiliation`,
-`cause_death`, `state_responsibility`, `intentionality`, `event_title`
+\code{protest_domain}, \code{pres_admin}, \code{dec_affiliation}, \code{perp_affiliation},
+\code{cause_death}, \code{state_responsibility}, \code{intentionality}, \code{event_title}
 }
 \source{
-<https://ultimateconsequences.github.io/>
+\url{https://ultimateconsequences.github.io/}
 }
 \usage{
 uc_translation
@@ -21,14 +21,7 @@ A translation table for the Ultimate Consequences data project,
 which documents deaths in Bolivian political conflict.
 }
 \details{
-translation <- `list(protest_domain = domain_trans_table,
-                    pres_admin = pres_trans_table,
-                    dec_affiliation = affil_trans_table,
-                    perp_affiliation = affil_trans_table,
-                    cause_death = cause_trans_table,
-                    state_responsibility = sresp_trans_table,
-                    intentionality = intent_trans_table,
-                    event_title = event_trans_table)`
+uc_translation <- \code{list(protest_domain = domain_trans_table, pres_admin = pres_trans_table, dec_affiliation = affil_trans_table, perp_affiliation = affil_trans_table, cause_death = cause_trans_table, state_responsibility = sresp_trans_table, intentionality = intent_trans_table, event_title = event_trans_table)}
 
 Note that the duplicate between two variables is intentional,
 since these two variables (for the affiliation of the perpetrator

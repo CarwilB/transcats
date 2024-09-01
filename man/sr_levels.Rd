@@ -5,20 +5,20 @@
 \alias{sr_levels}
 \title{State Responsibility Levels}
 \format{
-`sr_levels` is a vector with six values.
+\code{sr_levels} is a vector with six values.
 }
 \source{
-<https://ultimateconsequences.github.io/>
+\url{https://ultimateconsequences.github.io/}
 }
 \usage{
 sr_levels
 }
 \description{
-A vector ordering the levels for the variable `state_responsibility` in
+A vector ordering the levels for the variable \code{state_responsibility} in
 the Ultimate Consequences database.
 }
 \details{
 sr_levels <- c("Perpetrator", "Victim", "Involved", "Separate",
-               "Unintentional", "Unknown")
+"Unintentional", "Unknown")
 }
 \keyword{datasets}

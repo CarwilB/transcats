@@ -37,7 +37,7 @@ on from translated_join_vars to translated_join}
 A modified version of the data table with extra columns
 }
 \description{
-Adds one column (`translated_join`) or several columns (`translated_join_vars`)
+Adds one column (\code{translated_join}) or several columns (\code{translated_join_vars})
 to the right side of a data table, filled with translations of one or several
 categorical variables.
 }

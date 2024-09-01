@@ -36,17 +36,17 @@ A single dataframe or a list of dataframes
 Creates a blank translation table for a multiple variables in a data frame.
 }
 \details{
-If `combine_tables` is TRUE, all the translation tables are stacked and
+If \code{combine_tables} is TRUE, all the translation tables are stacked and
 bound together in a single table. If FALSE, they are returned in the
-preferred `transcats` form, a list of translation tables.
+preferred \code{transcats} form, a list of translation tables.
 
-The left column of each table, named by `source_lang` has the original values. If the
+The left column of each table, named by \code{source_lang} has the original values. If the
 variable is a factor, these are the levels of the factor. If it's a
-character variable, these are the unique values of `variable` in
-`dataframe`.
+character variable, these are the unique values of \code{variable} in
+\code{dataframe}.
 
-Each language in the `dest_language_list` gets its own column. However,
-if the `source_lang` is in this list, it is removed. Duplicate values
+Each language in the \code{dest_language_list} gets its own column. However,
+if the \code{source_lang} is in this list, it is removed. Duplicate values
 receive a warning.
 }
 \examples{

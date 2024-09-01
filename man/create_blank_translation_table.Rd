@@ -22,19 +22,19 @@ create_blank_translation_table(
 }
 \value{
 Data frame with possible values for the variable in the source
-  language and blank to fill in translations
+language and blank to fill in translations
 }
 \description{
 Creates a blank translation table for a single variable in a data frame.
 }
 \details{
-Left column, named by `source_lang` has the original values. If the
+Left column, named by \code{source_lang} has the original values. If the
 variable is a factor, these are the levels of the factor. If it's a
-character variable, these are the unique values of `variable` in
-`dataframe`.
+character variable, these are the unique values of \code{variable} in
+\code{dataframe}.
 
-Each language in the `dest_language_list` gets its own column. However,
-if the `source_lang` is in this list, it is removed. Duplicate values
+Each language in the \code{dest_language_list} gets its own column. However,
+if the \code{source_lang} is in this list, it is removed. Duplicate values
 receive a warning.
 }
 \examples{

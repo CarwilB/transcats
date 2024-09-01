@@ -13,7 +13,7 @@ variable_name(
 \arguments{
 \item{variable}{Name of the variable, without quotes}
 
-\item{lang}{Language to be used; use `r_variable` for the variable itself.}
+\item{lang}{Language to be used; use \code{r_variable} for the variable itself.}
 
 \item{name_table}{A horizontal translation table whose column names correspond to variables}
 }

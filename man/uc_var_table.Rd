@@ -10,7 +10,7 @@ to a single language, "en" (English), "es" (Spanish), and "r_variable"
 (the variable names in R).
 }
 \source{
-<https://ultimateconsequences.github.io/>
+\url{https://ultimateconsequences.github.io/}
 }
 \usage{
 uc_var_table

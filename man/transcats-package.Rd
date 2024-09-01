@@ -12,6 +12,7 @@ Translate the variable names and titles and values of dataframes containing cont
 Useful links:
 \itemize{
   \item \url{https://github.com/CarwilB/transcats}
+  \item \url{https://carwilb.github.io/transcats/}
   \item Report bugs at \url{https://github.com/CarwilB/transcats/issues}
 }
 
