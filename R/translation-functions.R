@@ -32,6 +32,9 @@ set_active_translation_table <- function(transtable) {
 #'   the variable involved).
 #' @param dest_lang Language to be translated to, typically as a short code.
 #' @param source_lang Language to be translated from, typically as a short code.
+#' @param .location If location is "right", the translated columns are added on
+#'     the right of dataframe. If "beside" they are added next to the the
+#'     translated variable. If "replace", they supplant the translated variable.
 #' @param ... is used to pass translation_table, dest_lang, source_lang
 #'  on from translated_join_vars to translated_join
 #'
@@ -41,15 +44,29 @@ set_active_translation_table <- function(transtable) {
 translated_join <- function(dataframe, variable,
                             translation_table = tcats$translation_table,
                             dest_lang = tcats$dest_lang,
-                            source_lang = tcats$source_lang){
+                            source_lang = tcats$source_lang,
+                            .location="right"){
+  assertthat::assert_that(variable %in% names(translation_table))
+
   renamed_variable <- stringr::str_c(variable, dest_lang, sep="_")
   var_trans_table <- purrr::pluck(translation_table, variable) %>%
-    dplyr::select(tidyselect::matches(source_lang), tidyselect::matches(dest_lang))
-  dplyr::left_join(dataframe, var_trans_table,
+    dplyr::select(c(source_lang, dest_lang))
+
+  dataframe <- dplyr::left_join(dataframe, var_trans_table,
             by = setNames(source_lang, variable)) %>%
     dplyr::rename_with(~ paste0(variable, "_", .x, recycle0 = TRUE),
                        .cols =any_of(c(dest_lang)))
+  if (.location %in% c("beside", "replace")){
+    dataframe <- dplyr::relocate(dataframe, matches(paste0(variable, "_")),
+                                 .after = variable)
+    if (.location == "replace"){
+      dataframe <- dplyr::select(dataframe, -(variable))
+    }
+  }
+  return(dataframe)
 }
+
+
 
 #' @rdname translated_join
 #'
@@ -57,7 +74,7 @@ translated_join <- function(dataframe, variable,
 translated_join_vars <- function(dataframe, variables=c(""), ...){
   for (i in 1:length(variables)){
     dataframe <- translated_join(dataframe, variables[i], ...)
-  }
+    }
   return(dataframe)
 }
 
