@@ -10,7 +10,8 @@ translated_join(
   variable,
   translation_table = tcats$translation_table,
   dest_lang = tcats$dest_lang,
-  source_lang = tcats$source_lang
+  source_lang = tcats$source_lang,
+  .location = "right"
 )
 
 translated_join_vars(dataframe, variables = c(""), ...)
@@ -27,6 +28,10 @@ the variable involved).}
 \item{dest_lang}{Language to be translated to, typically as a short code.}
 
 \item{source_lang}{Language to be translated from, typically as a short code.}
+
+\item{.location}{If location is "right", the translated columns are added on
+the right of dataframe. If "beside" they are added next to the the
+translated variable. If "replace", they supplant the translated variable.}
 
 \item{variables}{A list of variables in c("firstvar", "secondvar") format.}
 

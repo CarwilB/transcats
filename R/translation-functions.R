@@ -49,18 +49,18 @@ translated_join <- function(dataframe, variable,
   assertthat::assert_that(variable %in% names(translation_table))
 
   renamed_variable <- stringr::str_c(variable, dest_lang, sep="_")
-  var_trans_table <- purrr::pluck(translation_table, variable) %>%
-    dplyr::select(c(source_lang, dest_lang))
+  var_trans_table <- purrr::pluck(translation_table, variable)
+  var_trans_table <- var_trans_table [ , names(var_trans_table) %in% c(source_lang, dest_lang)]
 
   dataframe <- dplyr::left_join(dataframe, var_trans_table,
             by = setNames(source_lang, variable)) %>%
     dplyr::rename_with(~ paste0(variable, "_", .x, recycle0 = TRUE),
                        .cols =any_of(c(dest_lang)))
   if (.location %in% c("beside", "replace")){
-    dataframe <- dplyr::relocate(dataframe, matches(paste0(variable, "_")),
-                                 .after = variable)
+    dataframe <- dplyr::relocate(dataframe, tidyselect::matches(paste0(variable, "_")),
+                                 .after = {{variable}})
     if (.location == "replace"){
-      dataframe <- dplyr::select(dataframe, -(variable))
+      dataframe <- dataframe[ ,!names(dataframe) %in% c(variable)]
     }
   }
   return(dataframe)
