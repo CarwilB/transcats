@@ -112,3 +112,27 @@ variable_names_vector <- function(dataframe){
   purrr::map(colnames(dataframe), var_lang_str) %>%
     purrr::list_simplify()
 }
+
+
+#' Check if a language is available in a variable name table
+#'
+#' This function returns a simple logical result, TRUE or FALSE, as to
+#' whether a given language appears in the active variable name table, or in
+#' a language table passed as the second parameter.
+#'
+#' @param lang A language code.
+#' @param name_table A variable name table. Defaults to the active var_name_table.
+#'
+#' @return Logical true or false
+#' @export
+#'
+#' @examples
+#' var_name_language_available("fr") # examines active variable table
+#' var_name_language_available("es", uc_var_table)
+var_name_language_available <- function(lang = tcats$title_lang,
+                                        name_table = tcats$var_name_table) {
+  assertthat::assert_that(assertthat::is.string(lang))
+  return (lang %in% name_table$language)
+}
+
+

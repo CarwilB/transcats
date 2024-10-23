@@ -62,4 +62,12 @@ test_that("Invalid variable handled correctly", {
                "nonexistent.variable")
 })
 
+test_that("var_name_language_available function produces correct results", {
+  expect_false(var_name_language_available("cz"))
+  expect_true(var_name_language_available("es", uc_var_table))
+  expect_true(var_name_language_available("en", uc_var_table))
+  expect_true(var_name_language_available("r_variable", uc_var_table))
+  expect_false(var_name_language_available("fr", uc_var_table))
+})
+
 set_var_name_table(old_vartable)
