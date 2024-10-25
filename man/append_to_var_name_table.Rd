@@ -26,7 +26,11 @@ Default value is FALSE, indicating no change should be made.}
 A longer variable translation table
 }
 \description{
-Append new entries to variable_name_table
+Adds an extension translation table to an existing one. Put the extension
+first (this makes piping the function easier). By default, the
+active translation table is the one appended to. However,
+you must pipe to \code{set_var_name_table()} if you want to put the
+extended table into use.
 }
 \examples{
 n_trans_table <- tibble::tribble(

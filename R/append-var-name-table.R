@@ -1,6 +1,12 @@
 globalVariables(c("language"))
 #' Append new entries to variable_name_table
 #'
+#' Adds an extension translation table to an existing one. Put the extension
+#' first (this makes piping the function easier). By default, the
+#' active translation table is the one appended to. However,
+#' you must pipe to `set_var_name_table()` if you want to put the
+#' extended table into use.
+#'
 #' @param extension A matching variable translation table with one
 #'     column named `language` that has the same languages as `table'`, not necessarily
 #'     in the same order. (The extension may have additional languages, which
