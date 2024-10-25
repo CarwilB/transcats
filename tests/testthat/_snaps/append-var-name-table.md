@@ -1,7 +1,7 @@
 # Appending works as expected
 
     Code
-      append_to_var_name_table(uc_var_table, n_trans_table)
+      append_to_var_name_table(n_trans_table, uc_var_table)
     Output
       # A tibble: 3 x 70
         language   event_title    unconfirmed year  month day   later_year later_month
@@ -20,7 +20,7 @@
 # Works with variables where extension has extra languages
 
     Code
-      append_to_var_name_table(uc_var_table, gss_var_table)[c(1, 6, 71)]
+      append_to_var_name_table(gss_var_table, uc_var_table)[c(1, 6, 71)]
     Output
       # A tibble: 3 x 3
         language   day   tvhours                        
