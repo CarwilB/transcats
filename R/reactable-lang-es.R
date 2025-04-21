@@ -24,11 +24,12 @@ reactable_lang_es <- function(plural_noun="filas"){
     # Accessible labels for assistive technologies such as screen readers.
     # These are already set by default, but don't forget to update them when
     # changing visible text.
-    pagePreviousLabel = "Página anterior",
-    pageNextLabel = "Siguiente página",
-    pageNumberLabel = "Página {page}",
-    pageJumpLabel = "Ir a página",
-    pageSizeOptionsLabel = paste0(stringr::str_to_title(plural_noun), "por página"),
+    # ( \u00E1 is an "a" with an accent. )
+    pagePreviousLabel = "P\u00E1gina anterior",
+    pageNextLabel = "Siguiente p\u00E1gina",
+    pageNumberLabel = "P\u00E1gina {page}",
+    pageJumpLabel = "Ir a p\u00E1gina",
+    pageSizeOptionsLabel = paste0(stringr::str_to_title(plural_noun), "por p\u00E1gina"),
     groupExpandLabel = "Ver/ocultar grupo",
     detailsExpandLabel = "Ver/ocultar detalles",
     selectAllRowsLabel = "Seleccionar todas las filas",

@@ -71,6 +71,7 @@ translated_join <- function(dataframe, variable,
 #' @rdname translated_join
 #'
 #' @export
+#'
 translated_join_vars <- function(dataframe, variables=c(""), ...){
   for (i in 1:length(variables)){
     dataframe <- translated_join(dataframe, variables[i], ...)
