@@ -3,7 +3,7 @@ pkgdown: 2.1.1
 pkgdown_sha: ~
 articles:
   gss-workflow: gss-workflow.html
-last_built: 2025-04-21T18:47Z
+last_built: 2025-04-29T02:54Z
 urls:
   reference: https://carwilb.github.io/transcats/reference
   article: https://carwilb.github.io/transcats/articles
