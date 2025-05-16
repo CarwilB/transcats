@@ -9,3 +9,25 @@ uc_var_table <- readr::read_rds(paste0("data-raw/", vt.filename))
 uc_var_table <- uc_var_table %>% relocate(language) # put language guide on the left
 
 usethis::use_data(uc_var_table, overwrite = TRUE)
+
+n_trans_table <- dplyr::tribble(
+  ~date, ~age, ~n, ~n_state_perp, ~n_state_victim, ~n_state_separate, ~language, ~deaths, ~event,
+  #--|--|----
+  "Date", "Age", "Confirmed", "State Perp", "State Victim", "Sep from State", "en", "Deaths", "Event",
+  "Fecha", "Edad", "Confirmado", "Perp x Estado", "Víctima Estatal", "Ajeno del Estado", "es", "Muertes", "Evento",
+  "date", "age", "n", "n_state_perp", "n_state_victim", "n_state_separate", "r_variable", "deaths", "event"
+)
+
+grouping_trans_table <- dplyr::tribble(
+  ~n_, ~domain, ~unknown_domain, ~language,
+  #--|--|----
+  "Deaths", "Domain", "Unknown", "en",
+  "Muertes", "Dominio", "Dominio desconocido", "es",
+  "n_", "domain", "unknown_domain", "r_variable"
+)
+
+# Add the new translation tables to the existing variable name table
+uc_var_table_ext <- transcats::append_to_var_name_table(uc_var_table, n_trans_table)
+uc_var_table_ext <- transcats::append_to_var_name_table(uc_var_table_ext, grouping_trans_table)
+uc_var_table_ext <- uc_var_table_ext %>% dplyr::relocate(language) # put language guide on the left
+usethis::use_data(uc_var_table_ext, overwrite = TRUE)

@@ -27,17 +27,29 @@
 #' @source <https://ultimateconsequences.github.io/>
 "uc_translation"
 
-#' Ultimate Consequences Translation Table
+#' Ultimate Consequences Variable Name Translation Tables
 #'
-#' A translation table for the Ultimate Consequences data project,
+#' These are translation tables for the Ultimate Consequences data project,
 #' which documents deaths in Bolivian political conflict.
 #'
-#' @format A tibble with three rows and 63 columns. Each row corresponds
-#' to a single language, "en" (English), "es" (Spanish), and "r_variable"
-#' (the variable names in R).
+#' @format
+#' \describe{
+#'   \item{uc_var_table}{
+#'     A tibble with three rows and 63 columns. Each row corresponds
+#'     to a single language: "en" (English), "es" (Spanish), and "r_variable"
+#'     (the variable names in R).
+#'   }
+#'   \item{uc_var_table_ext}{
+#'     A tibble with three rows and 74 columns, extending the translation table
+#'     in `uc_var_table` with additional variables used in summary tables.
+#'   }
+#' }
 #'
 #' @source <https://ultimateconsequences.github.io/>
 "uc_var_table"
+
+#' @rdname uc_var_table
+"uc_var_table_ext"
 
 #' Variable name table for gss_cat
 #'

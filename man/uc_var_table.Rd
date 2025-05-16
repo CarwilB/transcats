@@ -3,20 +3,33 @@
 \docType{data}
 \name{uc_var_table}
 \alias{uc_var_table}
-\title{Ultimate Consequences Translation Table}
+\alias{uc_var_table_ext}
+\title{Ultimate Consequences Variable Name Translation Tables}
 \format{
+\describe{
+\item{uc_var_table}{
 A tibble with three rows and 63 columns. Each row corresponds
-to a single language, "en" (English), "es" (Spanish), and "r_variable"
+to a single language: "en" (English), "es" (Spanish), and "r_variable"
 (the variable names in R).
+}
+\item{uc_var_table_ext}{
+A tibble with three rows and 74 columns, extending the translation table
+in \code{uc_var_table} with additional variables used in summary tables.
+}
+}
+
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 3 rows and 74 columns.
 }
 \source{
 \url{https://ultimateconsequences.github.io/}
 }
 \usage{
 uc_var_table
+
+uc_var_table_ext
 }
 \description{
-A translation table for the Ultimate Consequences data project,
+These are translation tables for the Ultimate Consequences data project,
 which documents deaths in Bolivian political conflict.
 }
 \keyword{datasets}
