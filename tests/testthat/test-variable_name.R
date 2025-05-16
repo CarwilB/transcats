@@ -53,7 +53,7 @@ test_that("var_lang shortcut works accurately", {
 
 
 test_that("Invalid language handled correctly", {
-  expect_error(variable_name_from_string("age", "f0", gss_var_table))
+  expect_warning(variable_name_from_string("age", "f0", gss_var_table))
 })
 
 test_that("Invalid variable handled correctly", {

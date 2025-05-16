@@ -21,12 +21,14 @@
 variable_name_from_string <- function(variable,
                                       lang = tcats$title_lang,
                                       name_table = tcats$var_name_table){
-  stopifnot(lang %in% name_table$language)
+  if (!(lang %in% name_table$language)){
+    warning(paste0("Language ", lang, " not found in the variable name table."))
+    variable
+  }
 
   row_of_names_for_language <- name_table[which(name_table$language == lang), ]
   if (any(names(row_of_names_for_language)==variable)){
-    dplyr::pull(row_of_names_for_language[1, variable])
-    # select(row_of_names_for_language, .cols={{variable}}) %>% pull()
+    row_of_names_for_language[[variable]]
   }else{
     warning(paste0("No translation found for ", variable, "."))
     variable
