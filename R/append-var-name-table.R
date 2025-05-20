@@ -55,5 +55,7 @@ append_to_var_name_table <- function(extension, table = tcats$var_name_table, ov
     warning("Translation table extension does not match the format of the overall translation table and cannot be added.")
     return(table)
   }
+  new_table <- dplyr::relocate(new_table, language)
+
   return(new_table)
 }
