@@ -14,6 +14,22 @@ set_active_translation_table <- function(transtable) {
   invisible(old)
 }
 
+#' Get list of variables in the active translation table
+#'
+#' Returns a list of variables in the active translation table.
+#'
+#' @returns A character vector with the names of the variables in the
+#' active translation table.
+#'
+#' @export
+#'
+#' @examples
+#' set_active_translation_table(uc_translation)
+#' get_translation_variables()
+get_translation_variables <- function() {
+  names(tcats$translation_table)
+}
+
 #' Translated Join
 #'
 #' Adds one column (`translated_join`) or several columns (`translated_join_vars`)
@@ -66,8 +82,6 @@ translated_join <- function(dataframe, variable,
   return(dataframe)
 }
 
-
-
 #' @rdname translated_join
 #'
 #' @export
@@ -78,7 +92,3 @@ translated_join_vars <- function(dataframe, variables=c(""), ...){
     }
   return(dataframe)
 }
-
-
-
-
