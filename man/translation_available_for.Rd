@@ -3,8 +3,8 @@
 \name{translation_available_for}
 \alias{translation_available_for}
 \alias{num_translation_available}
-\alias{all_translation_available}
-\alias{which_translation_unavailable}
+\alias{all_translation_available_for}
+\alias{which_translation_unavailable_for}
 \title{Check whether translations are available for all values in a vector/column}
 \usage{
 translation_available_for(
@@ -25,7 +25,7 @@ num_translation_available(
   verbose = FALSE
 )
 
-all_translation_available(
+all_translation_available_for(
   dataframe,
   variable_name,
   translation_table = tcats$translation_table,
@@ -34,7 +34,7 @@ all_translation_available(
   verbose = FALSE
 )
 
-which_translation_unavailable(
+which_translation_unavailable_for(
   dataframe,
   variable_name,
   translation_table = tcats$translation_table,
@@ -72,9 +72,9 @@ translation table.
 that have translations available, from zero to
 length(unique(vector)).
 
-\code{all_translation_available} checks if all values in the vector
+\code{all_translation_available_for} checks if all values in the vector
 have translations available in the translation table.
 
-\code{which_translation_unavailable} returns a vector with the values
+\code{which_translation_unavailable_for} returns a vector with the values
 that do not have translations available in the translation table.
 }
