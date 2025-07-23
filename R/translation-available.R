@@ -164,9 +164,9 @@ which_translation_available <-  function(variable_name,
     return(NULL)
   }
   # Get the values that have translations available
-  filtered_var_trans_table <- var_trans_table %>%
-    filter((.[[1]] != "") & !is.na(.[[1]])) %>%
-    filter((.[[2]] != "") & !is.na(.[[2]]))
+  filtered_var_trans_table <- var_trans_table[
+    var_trans_table[[1]] != "" & !is.na(var_trans_table[[1]]) &
+    var_trans_table[[2]] != "" & !is.na(var_trans_table[[2]]), ]
   filtered_var_trans_table[[1]] %>%
     unique() %>%
     sort()
