@@ -12,6 +12,8 @@
 <url><loc>https://carwilb.github.io/transcats/reference/create_blank_translation_tables.html</loc></url>
 <url><loc>https://carwilb.github.io/transcats/reference/dest_lang.html</loc></url>
 <url><loc>https://carwilb.github.io/transcats/reference/dest_lang_list.html</loc></url>
+<url><loc>https://carwilb.github.io/transcats/reference/get_translation_variables.html</loc></url>
+<url><loc>https://carwilb.github.io/transcats/reference/gss_translation.html</loc></url>
 <url><loc>https://carwilb.github.io/transcats/reference/gss_var_table.html</loc></url>
 <url><loc>https://carwilb.github.io/transcats/reference/index.html</loc></url>
 <url><loc>https://carwilb.github.io/transcats/reference/parse_combined_translation_table.html</loc></url>
@@ -30,6 +32,7 @@
 <url><loc>https://carwilb.github.io/transcats/reference/transcats-package.html</loc></url>
 <url><loc>https://carwilb.github.io/transcats/reference/translated_join.html</loc></url>
 <url><loc>https://carwilb.github.io/transcats/reference/translated_levels.html</loc></url>
+<url><loc>https://carwilb.github.io/transcats/reference/translation_available_for.html</loc></url>
 <url><loc>https://carwilb.github.io/transcats/reference/uc_translation.html</loc></url>
 <url><loc>https://carwilb.github.io/transcats/reference/uc_var_table.html</loc></url>
 <url><loc>https://carwilb.github.io/transcats/reference/var_lang.html</loc></url>
@@ -38,5 +41,6 @@
 <url><loc>https://carwilb.github.io/transcats/reference/variable_name.html</loc></url>
 <url><loc>https://carwilb.github.io/transcats/reference/variable_name_from_string.html</loc></url>
 <url><loc>https://carwilb.github.io/transcats/reference/variable_names_vector.html</loc></url>
+<url><loc>https://carwilb.github.io/transcats/reference/which_translation_available.html</loc></url>
 </urlset>
 
