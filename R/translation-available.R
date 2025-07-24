@@ -64,6 +64,7 @@ translation_available_for <- function(dataframe, variable_name,
   intersect(unique_values, purrr::pluck(var_trans_table, source_lang))
 }
 
+#' @export
 #' @rdname translation_available_for
 num_translation_available <- function(dataframe, variable_name,
                                       translation_table = tcats$translation_table,
@@ -78,6 +79,7 @@ num_translation_available <- function(dataframe, variable_name,
     length()
 }
 
+#' @export
 #' @rdname translation_available_for
 all_translation_available_for <- function(dataframe, variable_name,
                                       translation_table = tcats$translation_table,
@@ -96,6 +98,7 @@ all_translation_available_for <- function(dataframe, variable_name,
                                                    source_lang = source_lang))
 }
 
+#' @export
 #' @rdname translation_available_for
 which_translation_unavailable_for <- function(dataframe, variable_name,
                                           translation_table = tcats$translation_table,
