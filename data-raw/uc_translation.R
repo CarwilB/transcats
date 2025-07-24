@@ -1,4 +1,10 @@
 ## code to prepare `DATASET` dataset goes here
+#
+# Load UC translation table from data-raw
+#
+# This file can be copied from the ultimateconsequences GitHub repository
+# using:
+# mv ../ultimate-consequences/data/translation-tables.rds data-raw/translation-tables.rds
 translation.tables.filename <- "translation-tables.rds"
 uc_translation <- readr::read_rds(paste0("data-raw/", translation.tables.filename))
 
