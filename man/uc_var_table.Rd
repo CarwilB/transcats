@@ -3,7 +3,9 @@
 \docType{data}
 \name{uc_var_table}
 \alias{uc_var_table}
+\alias{n_trans_table}
 \alias{uc_var_table_ext}
+\alias{uc_translation_tables_2025_aug}
 \title{Ultimate Consequences Variable Name Translation Tables}
 \format{
 \describe{
@@ -12,13 +14,31 @@ A tibble with three rows and 63 columns. Each row corresponds
 to a single language: "en" (English), "es" (Spanish), and "r_variable"
 (the variable names in R).
 }
+\item{n_trans_table}{
+A tibble with three rows and 9 columns. Each row corresponds
+to a single language: "en" (English), "es" (Spanish), and "r_variable"
+(the variable names in R). This add variables not included in the
+deaths entries page to the translation set: date, age, n, n_state_perp,
+n_state_victim, n_state_separate, r_variable, deaths, event. All its
+values are included in uc_var_table_ext.
+}
 \item{uc_var_table_ext}{
 A tibble with three rows and 74 columns, extending the translation table
 in \code{uc_var_table} with additional variables used in summary tables.
 }
+\item{uc_translation_tables_2025_aug}{
+A list of eight tibbles, each with two columns named "en" and "es".
+Their names correspond to the categorical variables involved:
+\code{protest_domain}, \code{pres_admin}, \code{dec_affiliation}, \code{perp_affiliation},
+\code{cause_death}, \code{state_responsibility}, \code{intentionality}, \code{event_title}.
+}
 }
 
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 3 rows and 9 columns.
+
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 3 rows and 74 columns.
+
+An object of class \code{list} of length 8.
 }
 \source{
 \url{https://ultimateconsequences.github.io/}
@@ -26,7 +46,11 @@ An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) w
 \usage{
 uc_var_table
 
+n_trans_table
+
 uc_var_table_ext
+
+uc_translation_tables_2025_aug
 }
 \description{
 These are translation tables for the Ultimate Consequences data project,

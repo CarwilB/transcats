@@ -23,6 +23,7 @@ n_trans_table <- dplyr::tribble(
   "Fecha", "Edad", "Confirmado", "Perp x Estado", "Víctima Estatal", "Ajeno del Estado", "es", "Muertes", "Evento",
   "date", "age", "n", "n_state_perp", "n_state_victim", "n_state_separate", "r_variable", "deaths", "event"
 )
+usethis::use_data(n_trans_table, overwrite = TRUE)
 
 grouping_trans_table <- dplyr::tribble(
   ~n_, ~domain, ~unknown_domain, ~language,
@@ -37,3 +38,8 @@ uc_var_table_ext <- transcats::append_to_var_name_table(uc_var_table, n_trans_ta
 uc_var_table_ext <- transcats::append_to_var_name_table(uc_var_table_ext, grouping_trans_table)
 uc_var_table_ext <- uc_var_table_ext %>% dplyr::relocate(language) # put language guide on the left
 usethis::use_data(uc_var_table_ext, overwrite = TRUE)
+
+translation.tables.filename <- "translation-tables.rds"
+uc_translation_tables_2025_aug <- readr::read_rds(here::here("data-raw", translation.tables.filename))
+usethis::use_data(uc_translation_tables_2025_aug)
+

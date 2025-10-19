@@ -10,9 +10,6 @@ Their names correspond to the categorical variables involved:
 \code{protest_domain}, \code{pres_admin}, \code{dec_affiliation}, \code{perp_affiliation},
 \code{cause_death}, \code{state_responsibility}, \code{intentionality}, \code{event_title}
 }
-\source{
-\url{https://ultimateconsequences.github.io/}
-}
 \usage{
 uc_translation
 }
@@ -26,5 +23,7 @@ uc_translation <- \code{list(protest_domain = domain_trans_table, pres_admin = p
 Note that the duplicate between two variables is intentional,
 since these two variables (for the affiliation of the perpetrator
 and victim of political violence) use the same set of possible categories.
+
+Source: \url{https://ultimateconsequences.github.io/}
 }
 \keyword{datasets}
