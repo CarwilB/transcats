@@ -22,6 +22,28 @@ test_that("Appending works as expected", {
   expect_no_error(append_to_var_name_table(n_trans_table, uc_var_table))
   expect_snapshot(append_to_var_name_table(n_trans_table, uc_var_table))
   expect_equal(append_to_var_name_table(n_trans_table, uc_var_table)$n, c("Confirmed", "Confirmado", "n"))
+
+  n_secondary_trans_table <- tibble::tribble(
+    ~pct, ~n_,  ~n_2, ~language,
+    #--|--|----
+    "% of Total", "Count", "Count", "en",
+    "%", "Número", "Número", "es",
+    "pct", "n_", "n_2", "r_variable",
+  )
+  expect_no_error(append_to_var_name_table(n_secondary_trans_table,
+                                           transcats::uc_var_table_ext,
+                                           overwrite = FALSE))
+  expect_equal(append_to_var_name_table(n_secondary_trans_table,
+                                        transcats::uc_var_table_ext,
+                                        overwrite = FALSE) %>% pull(n_),
+               uc_var_table_ext$n_)
+  expect_no_error(append_to_var_name_table(n_secondary_trans_table,
+                                          transcats::uc_var_table_ext,
+                                          overwrite = TRUE))
+  expect_equal(append_to_var_name_table(n_secondary_trans_table,
+                                        transcats::uc_var_table_ext,
+                                        overwrite = TRUE) %>% pull(n_),
+               c("Count", "Número", "n_"))
 })
 
 test_that("Languages can be reordered", {
